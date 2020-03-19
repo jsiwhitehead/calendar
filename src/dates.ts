@@ -58,10 +58,13 @@ const holy = [
   [4, 8],
   [4, 13],
   [6, 17],
-  [12, 14],
-  [12, 15],
+  [12, 4],
+  [12, 5],
 ];
-const semiholy = [[14, 4], [14, 6]];
+const semiholy = [
+  [14, 4],
+  [14, 6],
+];
 
 const isLeap = gy => {
   if (gy % 4 !== 0) return false;

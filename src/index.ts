@@ -23,7 +23,7 @@ const elem = document.createElement('div');
 document.body.appendChild(elem);
 const canvas = svg(elem);
 
-const dates = getDates(176, 6);
+const dates = getDates(177, 0);
 
 const drawText = (text, position, color, align = 'middle') => {
   canvas
@@ -159,35 +159,40 @@ canvas
 
 Array.from({ length: 19 }).forEach((_, i) => {
   drawText(
-    `${monthNames[i][0]}   ${i + 1}`,
+    // `${monthNames[i][0]}   ${i + 1}`,
+    `${i + 1}`,
     add(getPoint(0, i), [-14, 1]),
     colors.label,
     'end',
   );
   drawText(
-    `${i + 1}   ${monthNames[i][1]}`,
+    // `${i + 1}   ${monthNames[i][1]}`,
+    `${i + 1}`,
     add(getPoint(i, 0), [14, 1]),
     colors.label,
     'start',
   );
   drawText(
-    i === 18 ? '*    Ayyám-i-Há' : `${i + 1}   ${monthNames[i][1]}`,
+    // i === 18 ? "*    Ayyám-i-Há" : `${i + 1}   ${monthNames[i][1]}`,
+    i === 18 ? '*' : `${i + 1}`,
     add(getPoint(-20, i), [-14, 1]),
     colors.label,
     'start',
   );
   drawText(
-    `${monthNames[i][0]}   ${i + 1}`,
+    // `${monthNames[i][0]}   ${i + 1}`,
+    `${i + 1}`,
     add(getPoint(i, -20), [14, 1]),
     colors.label,
     'end',
   );
-  if (i !== 0 && i !== 18) {
-    drawText(`${i + 1}`, add(getPoint(i, i), [0, 7]), colors.label);
-  }
+  // if (i !== 0 && i !== 18) {
+  //   drawText(`${i + 1}`, add(getPoint(i, i), [0, 7]), colors.label);
+  // }
 });
 drawText(
-  `19   ${monthNames[18][1]}`,
+  // `19   ${monthNames[18][1]}`,
+  '19',
   add(getPoint(19, -19), [13, 3]),
   colors.label,
   'start',
